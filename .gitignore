@@ -39,6 +39,7 @@ Rakefile
 test.rb
 .idea
 
+
 app/*
 bin/*
 config/*
@@ -49,3 +50,4 @@ public/*
 storage/*
 tmp/*
 vendor/*
+test/*
