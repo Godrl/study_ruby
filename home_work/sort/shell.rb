@@ -1,6 +1,6 @@
 def shell_sort(array)
   len = array.length
-  gap = (len / 3) + 1 # 간격 초기화
+  gap = get_gap(len)
 
   # 간격이 1보다 작을때 까지 반복
   while gap >= 1
@@ -14,12 +14,16 @@ def shell_sort(array)
         j -= gap
       end
     end
-    gap /= 3
-    gap += 1 if gap > 1 && gap.even? # 간격은 홀수일때 가장 효율이 좋다
+    gap = get_gap(gap)
   end
   puts "셸 정렬 결과: #{array.inspect}"
 end
 
+def get_gap(gap)
+  gap /= 3
+  gap += 1 if gap > 1 && gap.even?
+  gap
+end
 
 arr = [1, 5, 10, 13, 20, 15, 100, 24, 90, 57, 30, 80]
 shell_sort(arr)
